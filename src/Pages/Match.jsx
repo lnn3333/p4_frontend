@@ -47,7 +47,7 @@ const Match = () => {
       traits: selectedOptions,
     };
     try {
-      const response = await fetch('http://localhost:3001/matchData', {
+      const response = await fetch('https://p4-backend-rmkb.onrender.com/matchData', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -36,7 +36,7 @@ const Lifestyle = () => {
         console.log(input);
       
         try {
-            const response = await fetch('http://localhost:3001/life', {
+            const response = await fetch('https://p4-backend-rmkb.onrender.com/life', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',

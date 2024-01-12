@@ -51,7 +51,7 @@ const Personality = () => {
       traits: selectedOptions,
     };
     try {
-      const response = await fetch('http://localhost:3001/userData', {
+      const response = await fetch('https://p4-backend-rmkb.onrender.com/userData', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

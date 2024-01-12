@@ -73,7 +73,7 @@ const Home = () => {
     console.log(input);
   
     try {
-      const response = await axios.post('http://localhost:3001/home_add', formData);
+      const response = await axios.post('https://p4-backend-rmkb.onrender.com/home_add', formData);
       console.log(response.data);
       navigate("/personality");
     } catch (error) {
