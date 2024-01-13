@@ -73,7 +73,7 @@ const Home = () => {
     console.log(input);
   
     try {
-      const response = await axios.post('https://p4-backend-rmkb.onrender.com/home_add', formData);
+      const response = await axios.post('http://localhost:3001/home_add', formData);
       console.log(response.data);
       navigate("/personality");
     } catch (error) {
@@ -81,7 +81,9 @@ const Home = () => {
     }
   };
   
-
+const handleClick = ()=>{
+  navigate("/personality");
+}
 
   return (
     <React.Fragment>
@@ -91,7 +93,7 @@ const Home = () => {
       </Routes>
       <div className='main-container'>
         <span className='text'>Find your match</span>
-  <form className= "menu" onSubmit={handleSubmit}>
+  <form  onSubmit={handleSubmit}>
 
     <input className="form-control"
       onChange={handleChange}
@@ -100,7 +102,6 @@ const Home = () => {
       autoComplete="off"
       placeholder="Your Gmail"
     />
-      <div className="menu-item">
     <SelectComponent
       options={options}
       placeholder={"Your Horoscope"}
@@ -113,10 +114,9 @@ const Home = () => {
       onChange={(item) => handleGenderChange(item)}
       selectedOption={selectedGender}
     />
-  </div>
 
   
-  <button type="submit" className="btn-2" >Next One!!</button>
+  <button type="submit" className="btn-2" onClick={handleClick} >Next One!!</button>
 </form>
 
         

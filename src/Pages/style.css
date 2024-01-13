@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
 body{
     display: flex;
     height: 90vh;
@@ -6,15 +9,14 @@ body{
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    background-image: #b40101;
-    font-family: 'Open Sans', sans-serif;
+    background-color: #ff98bb;
+    font-family: "Playfair Display", serif;
 }
 
 
 .menu{
-	background-image: linear-gradient(to right, #ed6ea0 0%, #ec8c69 100%);
+	background-color:#feb2a8;
 	border-radius: 18px;
-	box-shadow: inset 0.1rem 0.1rem 0.5rem rgba(0 ,0 ,0 ,0.15);
 	justify-content: center; /* Center the content horizontally */
   	align-items: center; /* Center the content vertically */
 }	
@@ -24,8 +26,9 @@ body{
 }
 
 
+
 .dropdown{
-	background-image: linear-gradient(to right, #71bde6 0%, #69b1ec 100%);
+	background-color:#f4b6c2;
 	border:1px solid black;
 	border-radius: 18px;
 	border-bottom: none;
@@ -33,17 +36,30 @@ body{
 	position: absolute;
 	display: none;
 	transition: all 0.3s ease;
-	z-index: 1000;
-
+	
 }
-
+/* For WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+	width: 8px; }
 .dropdown.visible {
+	max-height: 70px; /* Adjust this value based on your design */
+	overflow-y: auto; /* Enable vertical scrolling */  
+	width: 70%;
+	border-radius: 18px;
+	transition: all 0.3s ease;
+	background-color:  #feb2a8;
+	font-family: "Playfair Display", serif;
+	font-size: 16px;
+	margin-bottom: 1rem;
+	margin-top: 1rem;
+	display:block;
+	margin-left: 60px;
+	text-align: left;
 	position: relative;
 	display:inline-block;
-	max-height: 170px; /* Adjust this value based on your design */
-	overflow-y: auto; /* Enable vertical scrolling */  
-	width: 100%;
+	
 }
+
 .input-clear-container{
 	position: absolute;
 	top:50%;
@@ -56,52 +72,61 @@ body{
 
 .menu-item{
 	border: black;
-	width: 100%;
+	width: 70%;
 	position:relative;
 	border-radius: 18px;
 	transition: all 0.3s ease;
 	height: 28px;
-	background-color: #d4a9ea;
-	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-	text-align: center;
+	background-color:  #feb2a8;
+	font-family: "Playfair Display", serif;
 	font-size: 16px;
 	margin-bottom: 1rem;
 	margin-top: 1rem;
 	display:block;
+	margin-left: 60px;
+	text-align: center;
 
 }
 
 .menu-item:hover {
-	background-color: rgb(13, 214, 249);
+	background-color:#343030;
+	
 }
 
 .itemsub:hover{
-	background-color: #f51d77;
+	background-color:#feb2a8;
 	color: #ffffff;
+	border-radius: 18px;
+	transition: all 0.3s ease;
+	height: 28px;
 }
 
 .itemsub{
 	width: 100%;
-	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-family: "Playfair Display", serif;
 	font-weight: 600;
-	color:rgba(0, 0, 0, 0.934);
+	color:#f6abb6;
 	text-align: center;
-	background-color: #7fec69;
+	background-color:#343030;
+	border-radius: 18px;
+	transition: all 0.3s ease;
+	height: 28px;
+	align-items: center;
+
 }
 
 .form-control{
-	background-color: #f0dcd5;
-	width: 100%;
-	margin-right:200px ;
-	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-	height: 50px;
+	background-color: #343030;
+	color:  #feb2a8;
+	width: 70%;
+	margin-left:60px;
+	font-family: "Playfair Display", serif;	height: 50px;
 	font-size: large;
-	font-style: italic;
 	text-align: center;
 	border-radius: 18px;
 }
 
 .form-control:hover{
-	background-color: #85b5eb;
-	color: #ffffff;
+	background-color: #ff98bb;
+	color: #343030;
 }

@@ -51,7 +51,7 @@ const Personality = () => {
       traits: selectedOptions,
     };
     try {
-      const response = await fetch('https://p4-backend-rmkb.onrender.com/userData', {
+      const response = await fetch('http://localhost:3001/userData', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -72,6 +72,10 @@ const Personality = () => {
       console.error('Error saving data:', error);
     }
   }
+
+  const handleClick = ()=>{
+    navigate("/match");
+  }
   return (
     <React.Fragment>
       <Link to='/match'></Link>
@@ -83,7 +87,7 @@ const Personality = () => {
 
         <form onSubmit={handleSubmit} method="post" action="/userData">
           {[1, 2, 3, 4, 5].map((index) => (
-            <div className="menu-item">
+
             <SelectComponent 
               key={index}
               options={availableOptions}
@@ -92,9 +96,9 @@ const Personality = () => {
               selectedOptions={selectedOptions}
               onRemove={(item) => handleRemoveOption(item)}
             />
-            </div>
+
           ))}
-           <button type="submit" className="btn-2" >Almost there !!</button>
+           <button type="submit" className="btn-2" onClick={handleClick}>Almost there !!</button>
         </form>
 
       </div>

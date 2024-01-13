@@ -36,7 +36,7 @@ const Lifestyle = () => {
         console.log(input);
       
         try {
-            const response = await fetch('https://p4-backend-rmkb.onrender.com/life', {
+            const response = await fetch('http://localhost:3001/life', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
@@ -57,6 +57,9 @@ const Lifestyle = () => {
           console.error('Error submitting form:', error);
         }
       };
+    const handleClick = ()=>{
+      navigate("/final");
+    }
     return (
         <React.Fragment>
             <Link to= '/final'> </Link>
@@ -66,15 +69,15 @@ const Lifestyle = () => {
             <div className='main-container'>
             <span className='text'>Lifestyle</span>
             <form onSubmit={handleSubmit}>
-            <div className="menu-item">
+          
             <SelectComponent 
                 options={options}
                 placeholder={"Describe your lifestyle"}
                 onChange={(item) => handleChange(item)}
                 selectedOption={selectedOption}
             />
-            </div>
-             <button type="submit" className="btn-2" >Done ^^</button>
+
+             <button type="submit" className="btn-2" onClick={handleClick} >Done ^^</button>
             </form>
             </div>
         </React.Fragment>

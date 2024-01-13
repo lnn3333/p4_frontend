@@ -38,17 +38,16 @@ const SelectComponent = React.forwardRef( ({
     }
 
     return (
-    <div className = "menu" ref={ref}>
-        <div onClick={onInputClick}>
-        <input className = "menu-item"
+    <div ref={ref}>
+   
+        <input className = "menu-item" onClick={onInputClick}
             type = "text"
             value = {inputValue}
             placeholder = {placeholder}
             onChange = {onInputChange}/>
 
         {selectedKey || inputValue ? (<div onClick={clearDropdown}></div>) : null}
-        </div>
-
+      
     <div className={`dropdown ${open ? 'visible':""}`} >
     {options.map(opt=>{
     return(

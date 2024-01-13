@@ -47,7 +47,7 @@ const Match = () => {
       traits: selectedOptions,
     };
     try {
-      const response = await fetch('https://p4-backend-rmkb.onrender.com/matchData', {
+      const response = await fetch('http://localhost:3001/matchData', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -68,6 +68,9 @@ const Match = () => {
       console.error('Error saving data:', error);
     }
   }
+  const handleClick = ()=>{
+    navigate("/lifestyle");
+  }
 
   return (
     <React.Fragment>
@@ -82,7 +85,6 @@ const Match = () => {
 
         <form onSubmit={handleSubmit} method="post" action="/matchData">
           {[1, 2, 3].map((index) => (
-            <div className="menu-item">
             <SelectComponent 
               key={index}
               options={availableOptions}
@@ -91,9 +93,8 @@ const Match = () => {
               selectedOptions={selectedOptions}
               onRemove={(item) => handleRemoveOption(item)}
             />
-          </div>
           ))}
-           <button type="submit" className="btn-2" >Last One</button>
+           <button type="submit" className="btn-2" onClick={handleClick}>Last One</button>
         </form>
       </div>
     </React.Fragment>
